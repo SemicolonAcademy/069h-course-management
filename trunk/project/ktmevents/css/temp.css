@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Finger+Paint);
+@import url(http://fonts.googleapis.com/css?family=Keania+One);
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
+* {margin:0;padding:0;border:none;}
+.wrapper {width:960px;margin:0 auto;}
+.clear {clear:both;}
+body {background:url(../img/body.jpg) repeat;font-family:Arial, Helvetica, sans-serif;line-height:20px;font-size:12px;}
+
+/*search*/
+.search {padding:3px 0;background:#fff repeat !important;}
+.search #search-form input {padding:3px 5px;margin-right:1px;border:1px solid #DDD;}
+.search #search-form input[type=submit]{padding:3px 5px;background-color:#607c18;color:#FFF;}
+/*end of search*/
+
+.top-top {min-height:30px;background:url(../img/top-top.jpg) repeat;}
+.top-top p {width:320px;float:right;color:#fff;}
+.top-top a {display:inline-block;color:#fff;line-height:30px;text-transform:uppercase;margin:0 5px;font-size:10px;text-decoration:none;}
+.top-top a:hover {text-decoration:underline;}
+
+
+.top {height:160px;background:url(../img/top.jpg) repeat-x;}
+.top .logo {padding:20px 0;width:358px;float:left;}
+.top .logo h1 {color:#fff;font-size:70px;line-height:70px;font-family: 'Keania One', cursive;font-weight:normal;}
+.top .logo h1 span {font-weight:bold;color:#000;}
+
+.top .top-right {width:175px;float:right;padding-top:10px;color:#fff;}
+.top .top-right form {}
+.top .top-right input {padding:5px 10px;margin:3px 0;}
+.top .top-right input[type=text],.top .top-right input[type=password] {color:#666;font-style:italic;letter-spacing:3px;-webkit-border-radius:3px;border-radius:3px;background:#fff;}
+
+#top-wrap {position:relative;}
+#login-form {padding:20px 35px;background:#DDD;position:absolute;top:70px;right:0px;width:180px;color:#000;-webkit-border-radius:5px;border-radius:5px;display:none;border:1px solid #AAA;-webkit-box-shadow:  0px 0px 20px 0px #000;box-shadow:  0px 0px 20px 0px #000;}
+#close {position:absolute;top:3px;right:3px;width:20px;height:20px;font-size:20px;text-decoration:none;background:#FFF;text-align:center;-webkit-border-radius:10px;border-radius:10px;}
+#close:hover {background:#000;color:#FFF;}
+.search input {-webkit-border-rauius:5px;border-rauius:5px;}
+.top .top-right input[type=submit] {background:#67831d;font-family: 'Electrolize', sans-serif;text-transform:uppercase;color:#fff;}
+.top .top-right input[type=submit]:hover {text-decoration:underline;}
+input[type=submit], input[type=checkbox] {cursor:pointer;}
+.top .top-right input[type=checkbox] {}
+.top .top-right form a {text-decoration:none;color:#000;font-style:italic;}
+.top .top-right form a:hover {text-decoration:underline;}
+
+.top .top-right .nav {padding:20px 0;}
+.top .top-right .nav li {list-style:none;float:left;}
+.top .top-right .nav li a {display:block;text-decoration:none;color:#FFF;background:url(../img/nav-bg.jpg) repeat-x;padding:0 12px;margin-right:5px;line-height:40px;-webkit-border-radius:5px;border-radius:5px;font-family: 'Electrolize', sans-serif;text-transform:uppercase;}
+.top .top-right .nav li a:hover {text-decoration:underline;}
+
+/*banner*/
+
+.banner {background:url(../img/banner-bg.png) repeat-x;min-height:300px;padding:10px;margin-top:0px;}
+.banner .banner-left {width:400px;float:left;}
+.banner .banner-left h1 {font-size:36px;line-height:50px;text-align:center;font-family: 'Keania One', cursive;text-transform:uppercase;color:#000;}
+.banner .banner-left h1 span {font-size:28px;color:#000;}
+.banner .banner-left h1 a {text-decoration:none;color:#FFF;background:#7b941f;-webkit-border-radius:5px;border-radius:5px;display:inline-block;line-height:50px;font-size:20px;width:230px;font-family: 'Electrolize', sans-serif;margin-top:10px;}
+
+.banner .slider {width:540px;float:right;}
+.banner .slider img {width:530px;height:290px;border:5px solid #fff;}
+
+/*content*/
+.content {padding:20px 0;}
+.content .upcomming {width:590px;float:left;}
+.content .upcomming li {list-style:none;padding:10px 0;border-bottom:1px dashed #CCC;color:#666;}
+.content .upcomming li a {text-decoration:none;color:#666;}
+.content .upcomming li a:hover {text-decoration:underline;color:#333;}
+.content .upcomming li:last-child {border-bottom:none;}
+.content .upcomming li span {font-family: 'Electrolize', sans-serif;text-transform:uppercase;margin-right:5px;font-weight:bold;color:#F60;font-size:16px;}
+
+.content .recent {width:340px;float:right;}
+.content h1 {font-family: 'Electrolize', sans-serif;text-transform:uppercase;padding-bottom:10px;font-size:30px;}
+.content .recent li {list-style:none;padding:10px 0;border-bottom:1px dashed #F60;color:#666;}
+.content .recent li a {text-decoration:none;color:#000;font-style:italic;}
+.content .recent li a:hover {text-decoration:underline;color:#333;}
+.content .recent li:last-child {border-bottom:none;}
+.content .recent li span {font-family: 'Electrolize', sans-serif;text-transform:uppercase;margin-right:5px;color:#fff;font-size:14px;background:#F60;line-height:24px;padding:0 10px;display:inline-block;-webkit-border-radius:3px;border-radius:3px;margin-bottom:5px;}
+
+/*footer*/
+.footer {background:url(../img/top-top.jpg) repeat;min-height:30px;padding:10px 0;color:#fff;line-height:30px;}
+.footer a {text-decoration:none;color:#F60;font-family: 'Electrolize', sans-serif;text-transform:uppercase;}
+.footer a:hover {text-decoration:underline;}
+
+
+.event-description {width:590px;float:left;margin-bottom:20px;}
+.event-description ul {width:200px;float:left;}
+.event-description ul li {list-style:url(../img/1357463658_pgnum.png) inside;line-height:30px;}
+.event-description img {width:340px;height:auto;float:right;}
