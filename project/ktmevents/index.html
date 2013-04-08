@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ktmEvents</title>
+<link rel="stylesheet" type="text/css" href="css/temp.css" />
+
+<script type="text/javascript">
+function display() {
+	
+	document.getElementById('login-form').style.display = 'block';
+	}
+	function hide() {
+	
+	document.getElementById('login-form').style.display = 'none';
+	}
+</script>
+
+</head>
+
+<body>
+<!--top top-->
+<div class="top-top">
+	<div class="wrapper">
+    	<p><a href="index.html">Home</a> | <a href="">View events on calendar</a> | <a href="">Help</a> | <a href="">sitemap</a></p>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--end top top-->
+
+<!--top-->
+<div class="top">
+	<div class="wrapper" id="top-wrap">
+    	<div class="logo">
+        <h1><Span>ktm</Span>Events</h1>
+        </div>
+        
+        <div class="top-right">
+        	
+        	
+            <div class="clear"></div>
+            <!--nav-->
+            <div class="nav">
+            	<ul>
+                	<li><a href="">SIGNUP NOW</a></li>
+                    <li><a href="#" id="login-botton" onclick="display()" ondblclick="hide()" onblur="hide()">LOG IN </a></li>
+                </ul>
+                				<div id="login-form">
+                                
+                                	<a id="close" href="#" onclick="hide()"> &times;</a>
+                                    <div class="clear"></div>
+                                       <form name="login" action="" method="post">
+                                       <font style="font-weight:bold;font-size:12px;">USERNAME :</font> <br />
+                                       <input type="text" name="username"/>
+                                        <br />
+                                       <font style="font-weight:bold;font-size:12px;">PASSWORD :</font><br />
+                                        <input type="password" name="password"/>						                                        <br />
+                                        <input type="checkbox" name="rem" /> &nbsp; Remember me&nbsp;<br /><br />
+                                        <input type="submit" name="submit" value="Login" /><br />
+                                        
+                                        <a href="">Forgot username / password ?</a>
+                                        </form>
+                                        <div class="clear"></div>
+                                        </div>
+            </div>
+        	<!--end of nav-->
+			<iframe src="http://katibajyo.com/embed.php?width=100&height=50&format=ampm&lang=en" scrolling="no" frameborder="0px" style="width:200px;height:80px"></iframe>
+			
+        </div>
+		
+		
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!--end top-->
+
+<!--search-->
+<div class="search">
+	<div class="wrapper">
+		
+        <form id="search-form" action="" method="post">
+        <font color="#666">Search events here  &rArr;&nbsp;&nbsp;</font>
+        <input type="text" name="search" placeholder="Type of event"/>
+        <input type="text" name="search" placeholder="Event location"/>
+        <input type="text" name="search" placeholder="Event date"/>
+        <input type="submit" name="submit" value="SEARCH"/>
+        </form>
+	</div>
+	<div class="clear"></div>
+</div>
+<!--end-of-search-->
+
+<!--content-->
+<div class="content">
+	<div class="wrapper">
+    
+    <!--upcommings-->
+    	<div class="upcomming">
+        	<h1>Upcomming events</h1>
+           	<ul>
+            	<li>
+                <span>15 jan, 2013</span><br />
+                <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+                
+                <li>
+                <span>21 jan, 2013</span><br />
+                <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit, ut labore et dolore magna aliqua ut labore et dolore magna aliqua.</a>
+                </li>
+                
+                <li>
+                <span>30 jan, 2013</span><br />
+                <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+                
+                <li>
+                <span>2 Feb, 2013</span><br />
+                <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+             
+            </ul>
+        </div>
+        <!--end of upcommings-->
+        
+        <!--recently added-->
+        <div class="recent">
+        	<h1>Recently added</h1>
+            <ul>
+            	<li>
+                <span>15 jan, 2013</span><br />
+              <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+                
+                <li>
+                <span>15 jan, 2013</span><br />
+              <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+                
+                <li>
+                <span>15 jan, 2013</span><br />
+              <a href="event-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                </li>
+                
+           </ul>
+           
+        </div>
+        <!--end of recently added-->
+    </div>
+<div class="clear"></div>
+</div>
+<!--end of content-->
+
+<!--footer-->
+<div class="footer">
+	<div class="wrapper">
+    	<p style="width:200px;float:left;">&copy; 2013. All rights reserved.</p>
+        <p style="width:145px;float:right;">Designed By : <a href="http://aswin.com.np/">ASWIN GIRI</a></p>
+		
+		
+		
+		
+    </div>
+    <div class="clear"></div>
+</div>
+<!--end of footer-->
+</body>
+</html>
