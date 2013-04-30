@@ -9,10 +9,9 @@ class Users extends CI_Controller {
         
         $this->load->helper('url');
         $this->load->model('Users_m');
-
-        
+      //  $this->load->library('upload');        
         $this->load->library('form_validation');
-    
+     	$this->load->model('Usertype_m');
         $validation_rules = array(
                array(
                      'field'   => 'username', 
@@ -62,11 +61,22 @@ class Users extends CI_Controller {
                   array(
                      'field'   => 'website', 
                      'label'   => 'Website', 
-                     'rules'   => 'required'
+                     'rules'   => ''
                   ),
+                   array(
+                     'field'   => 'picture', 
+                     'label'   => 'Picture', 
+                     'rules'   => ''
+                  ),
+                  
             );
 
 		$this->form_validation->set_rules($validation_rules);
+		
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';			
+		$this->load->library('upload', $config);
+			
 		        
     }
   
@@ -74,6 +84,8 @@ class Users extends CI_Controller {
 	{		
 		$data['users'] = $this->Users_m->get_users();		
 		$data['page'] = 'users';
+		
+		//echo $this->db->last_query();
 		
 		/*
 		echo "<pre>";
@@ -98,11 +110,39 @@ class Users extends CI_Controller {
 		$data['page'] = 'users';
 		$data['page_title'] = 'Create user';
 		
-	
-
+		$all_usertype = $this->Usertype_m->get_usertype();
+		$usertype_select = array();
+		
+		foreach ($all_usertype as $u){
+			$usertype_select [$u->id] = $u->name;
+		}
+		
+		$data['usertype_select'] = $usertype_select;		
+		
 		if ($this->form_validation->run())
 		{
 			//$this->load->view('myform');
+				
+			
+			$field_name = "picture";
+			
+			if ( ! $this->upload->do_upload('picture'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+	
+				//$this->load->view('upload_form', $error);
+				$this->form_validation->set_message('picture', 'Error Message');
+				
+			}
+			else
+			{
+				$upload_data = $this->upload->data();
+				
+				/*
+				echo "<pre>";
+				print_r($upload_data);
+				exit;
+				*/
 			
 			$userdata = array (
   				'username' => $this->input->post('username'),
@@ -114,13 +154,18 @@ class Users extends CI_Controller {
   				'last_name' => $this->input->post('lastname'),
   				'phone' => $this->input->post('phone'),
   				'address' => $this->input->post('address'),
-  				'website' => $this->input->post('website') 			
+  				'website' => $this->input->post('website'),
+				'picture' => $upload_data['file_name']	
 			);
 			
 			if ($this->Users_m->insert_user($userdata)){
 				redirect ('admin/users');
 			}
 			
+	
+				$this->load->view('upload_success', $data);
+			}
+						
 			
 			//insert date 
 			//redirect 
@@ -135,7 +180,15 @@ class Users extends CI_Controller {
 		
 		$data['page'] = 'edit_user';
 		$data['page_title'] = 'Edit user';
+		$all_usertype = $this->Usertype_m->get_usertype();
+		$usertype_select = array();
 		
+		foreach ($all_usertype as $u){
+			$usertype_select [$u->id] = $u->name;
+		}
+		
+		$data['usertype_select'] = $usertype_select;		
+				
 		$data['user']= $this->Users_m->get_user($id);
 
 		if ($this->form_validation->run())
@@ -166,8 +219,19 @@ class Users extends CI_Controller {
 		
 	}
 	
+	function search(){
+	
+	$data['page'] = 'users';		
+	
+	$q = $this->input->post('query');
+	
+	//$this->data->search_result = $this->Users_m->search($q);
+	$data['users'] = $this->Users_m->search($q);
+	
+	$this->load->view('admin/users', $data);
 	
 	
+	}
 }
 
 /* End of file welcome.php */

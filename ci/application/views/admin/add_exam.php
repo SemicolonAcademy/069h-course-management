@@ -14,7 +14,7 @@
 	  <br/>      <br/>
 	      
 	  <form class="form-horizontal" action = "<?php echo site_url('admin/exams/add');?>" method = "POST" enctype="multipart/form-data">
-	  <div class="control-group">
+	  <div class="control-group <?php if(form_error('name')) echo "error";?>">
 		<label class="control-label" for="name">Exam Name </label>
 		<div class="controls">
 		  <input type="text" id="name" name="name"  value="<?php echo set_value('name');?>">
@@ -22,7 +22,7 @@
 		</div>
 	  </div>
 	 
-	  <div class="control-group ">
+	  <div class="control-group <?php if(form_error('description')) echo "error";?>">
 		<label class="control-label" for="description">Exam Description</label>
 		<div class="controls">
 		 <textarea rows="3" id="description" name="description"><?php echo set_value('description');?></textarea>
@@ -31,7 +31,7 @@
 	  </div>
   
   
-	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
+	  <div class="control-group <?php if (form_error('full_marks')) echo "error"; ?>">
 		<label class="control-label" for="full_marks">Full Mark</label>
 		<div class="controls">
 		  <input type="text" id="full_marks" name="full_marks"  value="<?php  echo set_value('full_marks'); ?>">
@@ -40,7 +40,7 @@
 	  </div>
 	  
 	  
-	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
+	  <div class="control-group <?php if (form_error('pass_marks')) echo "error"; ?>">
 		<label class="control-label" for="pass_marks">Pass Mark</label>
 		<div class="controls">
 		  <input type="text" id="pass_marks" name="pass_marks"  value="<?php echo  set_value('pass_marks'); ?>">
@@ -56,7 +56,7 @@
 		</div>
 	  </div>
 	  
-	 <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
+	 <div class="control-group <?php if (form_error('end_time')) echo "error"; ?>">
 		<label class="control-label" for="end_time">End Time</label>
 		<div class="controls">
 		  <input type="text" id="end_time" name="end_time"  value="<?php echo  set_value('end_time'); ?>">
@@ -64,7 +64,7 @@
 		</div>
 	  </div>
 	  
-	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
+	  <div class="control-group <?php if (form_error('date')) echo "error"; ?>">
 		<label class="control-label" for="date">Exam Date</label>
 		<div class="controls">
 		  <input type="text" id="date" name="date"  value="<?php echo  set_value('date'); ?>">
@@ -72,17 +72,10 @@
 		</div>
 	  </div>
 	  
-	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
+	  <div class="control-group <?php if (form_error('course_id')) echo "error"; ?>">
 		<label class="control-label" for="course_id">Course Name</label>
-		<div class="controls">
-		  <select id="course_id" name="course_id"  value="<?php echo set_value('course_id'); ?>">
-		  
-		  <option value="0" selected="selected" >-Select Course-</option><br>
-			  <option value="42">java</option><br>
-    	  </select>
-    	  
-    	  <?php echo form_dropdown('course_id', $course_select);?>
-    	  
+		<div class="controls">		     	  
+    	  <?php echo form_dropdown('course_id', array('-- Select Course -- ') + $course_select, '40');?>    	  
     	  <span class="help-inline"><?php echo form_error('course_id'); ?></span>
 		</div>
 	  </div>

@@ -8,15 +8,13 @@
 
 	<?php $this->load->view('admin/nav'); ?>
 	
-
     <div class="container">
 
       <h1>Manage Questions</h1>
 		<p>From here you can manage Questions of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="#"> Add Questions </a> | <a href=""> Questions Types</a>)</span></h3>
-	  	  
-		
+	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="<?php echo site_url("admin/questions/create/"); ?>"> Add Questions </a> | <a href=""> Questions Types</a>)</span></h3>
+			
 	 <table class="table table-hover">
               <thead>
                 <tr>
@@ -39,11 +37,19 @@
                <tr>
                <td><?php echo $count;?></td>
                <td><?php echo $question['question'];?></td>
-               <td><?php echo $question['question'];?></td>
+               <td><?php echo 
+               $qid = $question['exam_id'];
+               
+
+               
+		     	  
+    	 // 	echo form_dropdown('course_id', array('-- Select Course -- ') + $course_select, '40');   	  
+
+               ?></td>
+               <td><?php echo $question['questiontype_id'];?></td>
                <td><?php echo $question['marks'];?></td>
                <td><?php echo $question['remark'];?></td>
-               <td><?php echo $question['question'];?></td>
-               <td><a href="#">Details</a> | <a href="">Edit</a> | <a  href="<?php echo "";?>" >Delete</a></td>
+               <td><a href="#">Details</a> | <a href="">Edit</a> | <a onclick="return confirm('Are you sure you want to delete?')"   href="<?php echo site_url("admin/questions/delete/".$question['id']);?>" >Delete</a></td>
                </tr>
                <?php } ?>
                 

@@ -12,19 +12,42 @@ class Users_m extends CI_Model {
     
     function get_users()
     {
-        $query = $this->db->get('users');
+        $this->db->select('*, user_type.name as user_type_name');
+        $this->db->from('users');
+    	$this->db->join('user_type','users.user_type = user_type.id');        
+        $query = $this->db->get();
         return $query->result_array();
+        
+        
+        
     }
 
+    function search($q){
+    	
+    	$this->db->select('*, user_type.name as user_type_name');
+        $this->db->from('users');
+    	$this->db->join('user_type','users.user_type = user_type.id');        
+        $this->db->like('username', $q); 
+    	$this->db->or_like('first_name', $q);
+    	$query = $this->db->get();
+    	
+        return $query->result_array();
+         
+    	
+    	
+    	
+    }
     
      function get_user($id)
     {
-        $this->db->where('id',$id);
+        $this->db->select('*, user_type.name as user_type_name');
+    	$this->db->join('user_type','users.user_type = user_type.id');
+        $this->db->where('users.id',$id);        
     	$query = $this->db->get('users');
+    	    	
         return $query->row_array();
     }
-    
-    
+        
     
     function insert_user($data)
     {        
