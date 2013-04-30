@@ -14,9 +14,10 @@ class Questions_m extends CI_Model{
 		
 	}
 	
-	function delete_questions(){
+	function delete_questions($id){
 		
-		$query = $this->delete('questions',array('id',$id));
+	//	$query = $this->delete('questions',array('id',$id));
+		  return $this->db->delete('questions', array('id' => $id));
 		
 	}
 

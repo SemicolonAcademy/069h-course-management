@@ -38,8 +38,8 @@
                   <td>1</td>
                   <td><?php if ($user['picture']) {?>
 					
-					<a id="lightbox" href="<?php echo "uploads/". $user['picture'];?>" >
-						<img width="80" height="80" src="<?php echo "uploads/". $user['picture'];?>" />
+					<a id="lightbox" href="<?php echo base_url()."uploads/". $user['picture'];?>" >
+						<img width="80" height="80" src="<?php echo base_url()."uploads/". $user['picture'];?>" />
 					</a>
 					
 					<?php }  else { ?>
@@ -52,8 +52,8 @@
 				  <td><?php echo $user['email']; ?></td>
 				  <td><?php echo $user['first_name']." ".$user['mid_name']." ".$user['last_name']; ?></td>
 				  <td><?php echo $user['phone']; ?></td>
-				  <td><?php echo $user['user_type']; ?></td>
-                  <td><a href="#">Details</a> | <a href="<?php echo site_url("admin/users/edit/".$user['id']);?>">Edit</a> | <a  href="<?php echo site_url("admin/users/delete/".$user['id']); ?>" >Delete</a></td>
+				  <td><?php echo $user['user_type_name']; ?></td>
+                  <td><a href="#">Details</a> | <a href="<?php echo site_url("admin/users/edit/".$user['id']);?>">Edit</a> | <a onclick="return confirm('Are you sure you want to delete?')"   href="<?php echo site_url("admin/users/delete/".$user['id']); ?>" >Delete</a></td>
 				  				  
                 </tr>          
                               

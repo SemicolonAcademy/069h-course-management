@@ -23,8 +23,27 @@ class Questions extends CI_Controller {
 		$this->load->view('admin/questions', $data);
 	}
 	
+	public function create(){
+		
+		$data['page'] = "questions";
+		$data['page_title'] = "Add Questions";
+		
+		$coursedata = array (
+  				'name' => $this->input->post('name'),
+  				'description' => $this->input->post('description'),
+  			);
+			
+			if ($this->Courses_m->insert_course($coursedata)){
+				redirect ('admin/courses');
+			}
+				
+		$this->load->view('admin/create_course',$data);		
+		
+	}
+	
 	public function delete($id)
 	{
 			$this->Questions_m->delete_questions($id);
+			redirect('admin/questions');	
 	}
 }
